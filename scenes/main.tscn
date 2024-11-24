@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://e8b8geqonq3x"]
+
+[ext_resource type="PackedScene" uid="uid://dtwkmfic2v6pd" path="res://scenes/paddle.tscn" id="1_l5gra"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_q135m"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_spbs7"]
+[ext_resource type="PackedScene" uid="uid://ctusev74vfbra" path="res://scenes/brick.tscn" id="4_dstej"]
+
+[sub_resource type="Gradient" id="Gradient_mh0gk"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wb225"]
+gradient = SubResource("Gradient_mh0gk")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eg0i8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c6h0r"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dx6er"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_q135m")
+
+[node name="Level" type="Node2D" parent="."]
+script = ExtResource("1_spbs7")
+
+[node name="Background" type="Sprite2D" parent="Level"]
+z_index = -5
+scale = Vector2(9.375, 14.065)
+texture = SubResource("GradientTexture2D_wb225")
+centered = false
+
+[node name="LevelBoundary" type="StaticBody2D" parent="Level"]
+
+[node name="WorldBorderLeft" type="CollisionShape2D" parent="Level/LevelBoundary"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_eg0i8")
+
+[node name="WorldBorderTop" type="CollisionShape2D" parent="Level/LevelBoundary"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_c6h0r")
+
+[node name="WorldBorderRight" type="CollisionShape2D" parent="Level/LevelBoundary"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_dx6er")
+
+[node name="Paddle" parent="." instance=ExtResource("1_l5gra")]
+position = Vector2(300, 840)
+
+[node name="Brick" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(50, 500)
+
+[node name="Brick2" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(437, 340)
+
+[node name="Brick3" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(158, 409)
+
+[node name="Brick4" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(388, 219)
+
+[node name="Brick5" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(131, 446)
+
+[node name="Brick6" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(361, 424)
+
+[node name="Brick7" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(82, 362)
+
+[node name="Brick8" parent="." instance=ExtResource("4_dstej")]
+position = Vector2(267, 371)

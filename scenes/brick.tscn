@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctusev74vfbra"]
+
+[ext_resource type="Script" path="res://scripts/brick.gd" id="1_tui2a"]
+
+[sub_resource type="Gradient" id="Gradient_r6a2w"]
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6gvi3"]
+gradient = SubResource("Gradient_r6a2w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1vyv"]
+size = Vector2(64, 64)
+
+[node name="Brick" type="StaticBody2D" groups=["brick"]]
+scale = Vector2(1.5, 0.3)
+script = ExtResource("1_tui2a")
+
+[node name="BrickSprite" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_6gvi3")
+
+[node name="BrickCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y1vyv")
