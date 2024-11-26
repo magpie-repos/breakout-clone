@@ -9,6 +9,12 @@ var vector: Vector2
 @onready var sprite_size: Vector2 = $BallSprite.texture.get_size()
 
 signal points_scored(amount: int)
+signal ball_die(Ball)
+
+func _process(delta: float) -> void:
+	if is_out_of_bounds(sprite_size, window_size, scale):
+		ball_die.emit(self)
+		queue_free()
 
 func _physics_process(delta: float) -> void:
 	velocity = vector.normalized() * speed
@@ -29,6 +35,12 @@ func _physics_process(delta: float) -> void:
 				points_scored.emit(body.value)
 				body.queue_free()
 
+func is_out_of_bounds(sprite_size: Vector2, window_size: Vector2, texture_scale: Vector2) -> bool:
+	var margin: float = (sprite_size.x / 2) * scale.x
+	if position.y >= window_size.y +  margin:
+		return true
+	else:
+		return false
 
 func setup_ball(init_pos: Vector2, init_vector: Vector2, init_speed: float) -> void:
 	position = init_pos

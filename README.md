@@ -4,7 +4,7 @@ Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 Status: Dev
-Time: 3h
+Time: 4h
 
 TODO: 
 
@@ -13,17 +13,17 @@ TODO:
   - [x] Background 
   - [ ] Bricks
     - [ ] Brick Layout
-    - [ ] (OP) Multiple Levels
-- [ ] Player Paddle
+    - [ ] ~~(OP) Multiple Levels~~
+- [x] Player Paddle
   - [x] Bounce vector depends on where it collides
   - [x] Handle Player Input
-- [ ] Ball 
+- [x] Ball 
   - [x] Bounce off borders
-  - [ ] Die if off screen
+  - [x] Die if off screen
   - [x] Kills bricks
 - [ ] Game Manager
-  - [ ] Handle win/loss
-  - [ ] Multiple lieve
+  - [x] Handle win/loss
+  - [x] Multiple lieve
   - [x] Handle score
   - [ ] Save high score (between sesssions)
 - [ ] Animations
@@ -35,11 +35,25 @@ TODO:
   - [ ] Level Clear
   - [ ] Loose
 - [ ] UI
-  - [ ] Score 
+  - [x] Score 
   - [ ] Pause
-  - [ ] Game Over
+  - [x] Game Over
   - [ ] New Game
   - [ ] Options
+
+## 
+
+## HOW TO MAKE GOOD
+
+- Option to active wrecking ball mode:
+  
+  - Ball smashes through bricks w/o bouncing
+  
+  - Ball goes super fast
+  
+  - Activating mode incurs movement restrictin on paddle
+  
+  - can only activate once per bounce on paddle
 
 ## Limitations - Time, Tools, and Target
 
