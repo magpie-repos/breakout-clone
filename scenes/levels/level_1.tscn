@@ -1,0 +1,312 @@
+[gd_scene load_steps=2 format=3 uid="uid://mqixoxr0o6sh"]
+
+[ext_resource type="PackedScene" uid="uid://ctusev74vfbra" path="res://scenes/brick.tscn" id="1_jumib"]
+
+[node name="Bricks" type="Node2D" groups=["level"]]
+position = Vector2(0, 11)
+
+[node name="Brick2" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 303)
+
+[node name="Brick3" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 303)
+
+[node name="Brick4" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 303)
+
+[node name="Brick6" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 303)
+
+[node name="Brick7" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 303)
+
+[node name="Brick8" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 303)
+
+[node name="Brick5" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 284)
+
+[node name="Brick9" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 284)
+
+[node name="Brick10" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 284)
+
+[node name="Brick11" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 284)
+
+[node name="Brick12" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 284)
+
+[node name="Brick13" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 284)
+
+[node name="Brick14" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 265)
+
+[node name="Brick15" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 265)
+
+[node name="Brick16" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 265)
+
+[node name="Brick17" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 265)
+
+[node name="Brick18" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 265)
+
+[node name="Brick19" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 265)
+
+[node name="Brick20" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 246)
+
+[node name="Brick21" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 246)
+
+[node name="Brick22" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 246)
+
+[node name="Brick23" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 246)
+
+[node name="Brick24" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 246)
+
+[node name="Brick25" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 246)
+
+[node name="Brick26" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 227)
+
+[node name="Brick27" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 227)
+
+[node name="Brick28" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 227)
+
+[node name="Brick29" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 227)
+
+[node name="Brick30" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 227)
+
+[node name="Brick31" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 227)
+
+[node name="Brick32" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 208)
+
+[node name="Brick33" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 208)
+
+[node name="Brick34" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 208)
+
+[node name="Brick35" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 208)
+
+[node name="Brick36" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 208)
+
+[node name="Brick37" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 208)
+
+[node name="Brick38" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 189)
+
+[node name="Brick39" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 189)
+
+[node name="Brick40" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 189)
+
+[node name="Brick41" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 189)
+
+[node name="Brick42" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 189)
+
+[node name="Brick43" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 189)
+
+[node name="Brick44" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 170)
+
+[node name="Brick45" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 170)
+
+[node name="Brick46" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 170)
+
+[node name="Brick47" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 170)
+
+[node name="Brick48" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 170)
+
+[node name="Brick49" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 170)
+
+[node name="Brick50" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 151)
+
+[node name="Brick51" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 151)
+
+[node name="Brick52" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 151)
+
+[node name="Brick53" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 151)
+
+[node name="Brick54" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 151)
+
+[node name="Brick55" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 151)
+
+[node name="Brick56" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 132)
+
+[node name="Brick57" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 132)
+
+[node name="Brick58" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 132)
+
+[node name="Brick59" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 132)
+
+[node name="Brick60" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 132)
+
+[node name="Brick61" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 132)
+
+[node name="Brick62" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 113)
+
+[node name="Brick63" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 113)
+
+[node name="Brick64" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 113)
+
+[node name="Brick65" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 113)
+
+[node name="Brick66" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 113)
+
+[node name="Brick67" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 113)
+
+[node name="Brick68" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 94)
+
+[node name="Brick69" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 94)
+
+[node name="Brick70" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 94)
+
+[node name="Brick71" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 94)
+
+[node name="Brick72" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 94)
+
+[node name="Brick73" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 94)
+
+[node name="Brick74" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 75)
+
+[node name="Brick75" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 75)
+
+[node name="Brick76" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 75)
+
+[node name="Brick77" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 75)
+
+[node name="Brick78" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 75)
+
+[node name="Brick79" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 75)
+
+[node name="Brick80" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 56)
+
+[node name="Brick81" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 56)
+
+[node name="Brick82" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 56)
+
+[node name="Brick83" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 56)
+
+[node name="Brick84" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 56)
+
+[node name="Brick85" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 56)
+
+[node name="Brick86" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, 37)
+
+[node name="Brick87" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, 37)
+
+[node name="Brick88" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, 37)
+
+[node name="Brick89" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, 37)
+
+[node name="Brick90" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, 37)
+
+[node name="Brick91" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, 37)
+
+[node name="Brick92" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(360, 18)
+
+[node name="Brick93" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(552, 18)
+
+[node name="Brick94" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(171, 18)
+
+[node name="Brick95" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(456, 18)
+
+[node name="Brick96" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(75, 18)
+
+[node name="Brick97" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(267, 18)
+
+[node name="Brick98" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(333, -1)
+
+[node name="Brick99" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(525, -0.999969)
+
+[node name="Brick100" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(144, -1)
+
+[node name="Brick101" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(429, -0.999969)
+
+[node name="Brick102" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(48, -1)
+
+[node name="Brick103" parent="." instance=ExtResource("1_jumib")]
+position = Vector2(240, -1)

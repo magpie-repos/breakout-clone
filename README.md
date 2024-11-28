@@ -4,7 +4,7 @@ Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 Status: Dev
-Time: 4h
+Time: 6h 7m
 
 TODO: 
 
@@ -12,7 +12,8 @@ TODO:
 - [ ] Level
   - [x] Background 
   - [ ] Bricks
-    - [ ] Brick Layout
+    - [x] Brick Layout
+    - [ ] Brick Color depends on y height
     - [ ] ~~(OP) Multiple Levels~~
 - [x] Player Paddle
   - [x] Bounce vector depends on where it collides
@@ -21,11 +22,13 @@ TODO:
   - [x] Bounce off borders
   - [x] Die if off screen
   - [x] Kills bricks
+  - [x] Smash mode
 - [ ] Game Manager
-  - [x] Handle win/loss
+  - [x] Handle loss
+  - [ ] Handle Win
   - [x] Multiple lieve
   - [x] Handle score
-  - [ ] Save high score (between sesssions)
+  - [x] Save high score (between sesssions)
 - [ ] Animations
   - [ ] ball die animation
   - [ ] level clear animation
@@ -55,9 +58,11 @@ TODO:
   
   - can only activate once per bounce on paddle
 
+- BONUS: Paddle durability as special effect during certain levels?
+
 ## Limitations - Time, Tools, and Target
 
-**Purpose:** Learn about godot and GDScript; Lear about good game design
+**Purpose:** Learn a about on-the-fly texture recoloring and gradient textures; 
 
 **Time Limit:** 20h
 

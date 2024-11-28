@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+#My ignores
+score.save

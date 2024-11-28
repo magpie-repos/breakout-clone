@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var window_scale: float = 1
-var paddle_move_speed: float = 160
+var paddle_move_speed: float = 200
 @onready var window_size: Vector2 = get_window().size
 ##Refs
 @onready var sprite_size: Vector2 = $PaddleSprite.texture.get_size()
