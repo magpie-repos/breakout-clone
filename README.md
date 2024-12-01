@@ -3,7 +3,7 @@
 Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
-Status: Dev
+Status: Done
 Time: 13h 15m
 
 TODO: 
