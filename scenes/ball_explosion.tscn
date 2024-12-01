@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5sh2v1kgprve"]
+
+[ext_resource type="Script" path="res://scripts/ball_explosion.gd" id="1_sgkkg"]
+
+[node name="BallExplosion" type="Node2D"]
+script = ExtResource("1_sgkkg")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+scale = Vector2(3, 3)
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.28
+direction = Vector2(0, -1)
+spread = 80.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+damping_min = 5.0
+damping_max = 5.0
+
+[connection signal="finished" from="Particles" to="." method="_on_particles_finished"]

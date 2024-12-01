@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbmlx3g6o6j8f"]
+[gd_scene load_steps=8 format=3 uid="uid://cbmlx3g6o6j8f"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_umdn7"]
+[ext_resource type="AudioStream" uid="uid://bh1oanpj4xye0" path="res://assets/sfx/ball_bounce_sfx.wav" id="2_yljq7"]
 
 [sub_resource type="Gradient" id="Gradient_3tod2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -16,9 +17,10 @@ size = Vector2(64, 64)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vbb52"]
 gradient = SubResource("Gradient_ltgee")
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D" node_paths=PackedStringArray("ball_bounce_sfx")]
 gravity_scale = 0.0
 script = ExtResource("1_umdn7")
+ball_bounce_sfx = NodePath("BallBounceSFX")
 
 [node name="BallSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -31,3 +33,6 @@ shape = SubResource("RectangleShape2D_ywneo")
 [node name="BallTrail" type="Sprite2D" parent="."]
 visible = false
 texture = SubResource("GradientTexture1D_vbb52")
+
+[node name="BallBounceSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yljq7")

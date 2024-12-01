@@ -13,6 +13,14 @@ var level_str_size: int = 2
 @export var game_over_score: Label
 @export var game_over_hi_score: Label
 
+@export var tutorial_ui: Control
+
+func show_tutorial() -> void:
+	tutorial_ui.show()
+
+func hide_tutorial() -> void:
+	main_ui.show()
+	tutorial_ui.hide()
 
 func update_score(new_score: int) -> void:
 	var score_string: String = pad_text(str(new_score), score_str_size)

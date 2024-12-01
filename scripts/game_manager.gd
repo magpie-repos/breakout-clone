@@ -2,6 +2,7 @@ extends Node2D
 class_name GameManager
 ##Game Vars
 var game_over: bool
+var tutorial_state: bool
 var curr_level: int
 var max_lives: int = 5
 var lives: int
@@ -17,34 +18,44 @@ var spawned_paddle: StaticBody2D
 @onready var window_size: Vector2 = get_window().size
 @onready var ball_scene: PackedScene = preload("res://scenes/ball.tscn")
 @onready var paddle_scene: PackedScene = preload("res://scenes/paddle.tscn")
+@onready var ball_explosion: PackedScene = preload("res://scenes/ball_explosion.tscn")
 @onready var ui: UI = $UI
 @onready var brick_spawner: BrickSpawner = $Level/Bricks
+##SFX
+@onready var ball_die_sfx: AudioStreamPlayer2D = $SFX/BallDieSFX
+@onready var level_clear_sfx: AudioStreamPlayer2D = $SFX/LevelClearSFX
+@onready var lose_sfx: AudioStreamPlayer2D = $SFX/LoseSFX
 
 func _ready() -> void:
 	hi_score = load_score()
-	new_game()
+	
+	tutorial_state = true
 
 func _process(delta: float) -> void:
-	debug_tools()
-	
-	if score > hi_score:
-		save_score(score)
-		hi_score = score
-	if game_over:
-		##Enable restarting after loss
-		if Input.is_action_just_pressed("reset"):
+	if tutorial_state:
+		ui.show_tutorial()
+		if Input.is_anything_pressed():
+			tutorial_state = false
+			ui.hide_tutorial()
 			new_game()
 	else:
-		if not get_tree().get_first_node_in_group("brick"):
-			print("here!")
-			print(game_over)
-			win_level()
+		if score > hi_score:
+			save_score(score)
+			hi_score = score
+		if game_over:
+			##Enable restarting after loss
+			if Input.is_action_just_pressed("reset"):
+				new_game()
+		else:
+			if not get_tree().get_first_node_in_group("brick"):
+				print("here!")
+				print(game_over)
+				win_level()
 
-func debug_tools() -> void:
-	if Input.is_action_just_pressed("debug_lvl_clear"):
-		win_level()
 
 func win_level() -> void:
+	level_clear_sfx.play()
+	
 	curr_level += 1
 	if lives < max_lives:
 		lives += 1
@@ -82,6 +93,7 @@ func new_game() -> void:
 	brick_spawner.spawn_bricks()
 
 func end_game() -> void:
+	lose_sfx.play()
 	game_over = true
 	brick_spawner.clear_bricks()
 	ui.show_game_over(score, hi_score)
@@ -110,7 +122,13 @@ func _on_points_scored(value: float):
 func _on_ball_die(dead_ball: Ball) -> void:
 	lives -= 1
 	ui.update_lives(lives)
+	
+	var spawned_explosion: Node2D = ball_explosion.instantiate()
+	spawned_explosion.position = spawned_ball.position
+	add_child(spawned_explosion)
 	clean_up_ball(dead_ball)
+
+	ball_die_sfx.play()
 	
 	if lives > 0:
 		spawned_ball = spawn_ball()

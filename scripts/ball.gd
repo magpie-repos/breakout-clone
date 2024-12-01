@@ -12,6 +12,8 @@ var smash_speed_decay: float = 0.998
 ##Refs
 @onready var window_size: Vector2 = get_window().size
 @onready var sprite_size: Vector2 = $BallSprite.texture.get_size()
+@export var ball_bounce_sfx: AudioStreamPlayer2D
+
 
 signal points_scored(amount: int)
 signal ball_die(Ball)
@@ -61,11 +63,14 @@ func _physics_process(delta: float) -> void:
 			else:
 				vector = vector.bounce(collision.get_normal())
 				smash_active = false
+		
+		ball_bounce_sfx.play()
+		
 		##Prevent bug where ball gets squished by paddle and has it's rotation permanently offset
 		rotation = 0	
 
 func is_out_of_bounds(sprite_size: Vector2, window_size: Vector2, texture_scale: Vector2) -> bool:
-	var margin: float = (sprite_size.x / 2) * scale.x
+	var margin: float = (32) * $BallSprite.scale.x
 	if position.y >= window_size.y +  margin:
 		return true
 	else:

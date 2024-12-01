@@ -4,7 +4,7 @@ Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 Status: Dev
-Time: 11h 50m
+Time: 13h 15m
 
 TODO: 
 
@@ -29,25 +29,22 @@ TODO:
   - [x] Multiple lieve (commonly known as lives)
   - [x] Handle score
   - [x] Save high score (between sesssions)
-- [ ] Animations
-  - [ ] ball die animation
-  - [ ] level clear animation
-- [ ] Sounds
-  - [ ] Bounce
-  - [ ] Brick Break
-  - [ ] Level Clear
-  - [ ] Loose
-- [ ] UI
+- [x] Animations
+  - [x] ball die animation
+- [x] Sounds
+  - [x] Bounce
+  - [] ~~Brick Break~~
+  - [x] Level Clear
+  - [x] Loose
+- [x] UI
   - [x] Score 
 	- [x] Prettify score ui
   - [x] Hi-Score
-  - [ ] Pause
+  - ~~[ ] Pause~~
   - [x] Displaying current lives
   - [x] Game Over
 	- [x] Display score & hi score
-  - [ ] New Game
-	- [ ] New Game Instrutions
-  - [ ] (OP) - Options
+  - [x] New Game Instrutions
 
 ## 
 
