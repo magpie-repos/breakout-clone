@@ -23,10 +23,7 @@ func _process(delta: float) -> void:
 	if is_out_of_bounds(sprite_size, window_size, scale):
 		ball_die.emit(self)
 		queue_free()
-	##Prevent bug where ball gets squished by paddle and has it's rotation permanently offset
-	rotation = 0
-	
-	
+
 func _physics_process(delta: float) -> void:
 	
 	##Handle player input	
@@ -49,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	##Collion calcs
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 		
-	if collision:
+	if collision:		
 		var body: Node2D = collision.get_collider()
 		if body:
 			if body.is_in_group("paddle"):
@@ -59,13 +56,13 @@ func _physics_process(delta: float) -> void:
 			elif body.is_in_group("brick"):
 				points_scored.emit(body.value)
 				body.queue_free()
-				
 				if not smash_active:
 					vector = vector.bounce(collision.get_normal())
-
 			else:
 				vector = vector.bounce(collision.get_normal())
 				smash_active = false
+		##Prevent bug where ball gets squished by paddle and has it's rotation permanently offset
+		rotation = 0	
 
 func is_out_of_bounds(sprite_size: Vector2, window_size: Vector2, texture_scale: Vector2) -> bool:
 	var margin: float = (sprite_size.x / 2) * scale.x

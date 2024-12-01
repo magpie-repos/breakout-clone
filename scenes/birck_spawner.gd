@@ -1,4 +1,5 @@
 extends Node2D
+class_name BrickSpawner
 
 var target_rows: int = 10
 var target_columns: int = 6
@@ -11,9 +12,6 @@ var spawned_bricks: Array[Node] = []
 var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 var brick_size: Vector2 = Vector2(64, 64)
 @onready var window_size: Vector2 = get_viewport().size
-
-func _ready() -> void:
-	spawn_bricks()
 
 func spawn_bricks() -> void:
 	var space_per_column: float = (window_size.x - side_brick_margin * 2) / target_columns
