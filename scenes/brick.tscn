@@ -26,7 +26,6 @@ scale = Vector2(1.5, 0.3)
 script = ExtResource("1_tui2a")
 
 [node name="BrickStroke" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = SubResource("GradientTexture2D_m0jk8")
 
 [node name="BrickSprite" type="Sprite2D" parent="."]

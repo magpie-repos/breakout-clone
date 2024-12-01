@@ -10,6 +10,8 @@ var hi_score: int
 var ball_start_pos: Vector2 = Vector2(0, 650)
 var ball_speed: float = 175
 var spawned_ball: Ball
+var spawned_paddle: StaticBody2D
+
 ##Refs
 @onready var window_size: Vector2 = get_window().size
 @onready var ball_scene: PackedScene = preload("res://scenes/ball.tscn")
@@ -19,8 +21,6 @@ var spawned_ball: Ball
 func _ready() -> void:
 	hi_score = load_score()
 	new_game()
-	ball_start_pos.x = window_size.x / 2
-	spawned_ball = spawn_ball()
 
 func _process(delta: float) -> void:
 	if score > hi_score:
@@ -28,30 +28,62 @@ func _process(delta: float) -> void:
 		hi_score = score
 	
 	##Check if level cleared
-	if not get_tree().get_first_node_in_group("brick"):
+	if not game_over:
+		if not get_tree().get_first_node_in_group("brick"):
+			win_level()
+	
+	if game_over:
+		if Input.is_action_just_pressed("reset"):
+			new_game()
+
+	debug_tools()
+
+func debug_tools() -> void:
+	if Input.is_action_just_pressed("debug_lvl_clear"):
 		win_level()
 
 func win_level() -> void:
 	curr_level += 1
+	ui.update_level(curr_level)
 	if lives < max_lives:
 		lives += 1
+	ui.update_lives(lives)
 	if spawned_ball:
 		clean_up_ball(spawned_ball)
+	
 	##TODO:
-	##- Show level clear txt
+	##- Show level clear Anim
 	##- Play sound
+	$Level/Bricks.clear_bricks()
 	$Level/Bricks.spawn_bricks()
+	spawned_ball = spawn_ball()
+	
+	spawned_paddle.position = Vector2(window_size.x / 2, 840)
 
 func new_game() -> void:
-	score = 0
-	ui.update_score(score)
-	lives = 3
 	game_over = false
+	score = 0
+	curr_level = 1
+	lives = 3
+	
 	ui.hide_game_over()
+	ui.update_score(score)
+	ui.update_level(curr_level)
+	ui.update_lives(lives)
+	
+	ball_start_pos.x = window_size.x / 2
+	spawned_ball = spawn_ball()
+	
+	spawned_paddle = paddle_scene.instantiate()
+	spawned_paddle.position = Vector2(window_size.x / 2, 840)
+	add_child(spawned_paddle)
 
 func end_game() -> void:
+	curr_level = 0
 	game_over = true
-	ui.show_game_over()
+	$Level/Bricks.clear_bricks()
+	ui.show_game_over(score, hi_score)
+	spawned_paddle.queue_free()
 
 func spawn_ball() -> Ball:
 	var ball: Ball = ball_scene.instantiate()
@@ -73,9 +105,11 @@ func _on_points_scored(value: float):
 
 func _on_ball_die(dead_ball: Ball) -> void:
 	lives -= 1
+	ui.update_lives(lives)
 	clean_up_ball(dead_ball)
 	if lives > 0:
 		spawned_ball = spawn_ball()
+		spawned_paddle.position = Vector2(window_size.x / 2, 840)
 	elif lives == 0:
 		end_game()
 	else:

@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://e8b8geqonq3x"]
+[gd_scene load_steps=19 format=3 uid="uid://e8b8geqonq3x"]
 
-[ext_resource type="PackedScene" uid="uid://dtwkmfic2v6pd" path="res://scenes/paddle.tscn" id="1_l5gra"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_q135m"]
 [ext_resource type="Script" path="res://scenes/birck_spawner.gd" id="2_rtpvx"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="5_elrhu"]
@@ -28,6 +27,35 @@ gradient = SubResource("Gradient_mh0gk")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dx6er"]
 
+[sub_resource type="SystemFont" id="SystemFont_sxj3q"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="SystemFont" id="SystemFont_kwtnl"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="SystemFont" id="SystemFont_xiebb"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="Gradient" id="Gradient_b4603"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p78s6"]
+gradient = SubResource("Gradient_b4603")
+width = 8
+height = 8
+
+[sub_resource type="SystemFont" id="SystemFont_13lbm"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="SystemFont" id="SystemFont_qm2d0"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="SystemFont" id="SystemFont_4pary"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="SystemFont" id="SystemFont_n82ic"]
+font_names = PackedStringArray("Consolas")
+
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_q135m")
 
@@ -47,6 +75,7 @@ rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_eg0i8")
 
 [node name="WorldBorderTop" type="CollisionShape2D" parent="Level/LevelBoundary"]
+position = Vector2(0, 50)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_c6h0r")
 
@@ -57,42 +86,118 @@ shape = SubResource("WorldBoundaryShape2D_dx6er")
 [node name="Bricks" type="Node2D" parent="Level"]
 script = ExtResource("2_rtpvx")
 
-[node name="Paddle" parent="." instance=ExtResource("1_l5gra")]
-position = Vector2(300, 840)
-
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_over_text", "score_label")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("main_ui", "score_label", "level_label", "lives_label", "game_over_ui", "game_over_score", "game_over_hi_score")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 600.0
 offset_bottom = 900.0
 script = ExtResource("5_elrhu")
-game_over_text = NodePath("MarginContainer/CenterContainer/GameOverLabel")
-score_label = NodePath("MarginContainer/ScoreLabel")
+main_ui = NodePath("UIMain")
+score_label = NodePath("UIMain/UIMargin/ScoreLabel")
+level_label = NodePath("UIMain/UIMargin/LevelUICenter/LevelLabel")
+lives_label = NodePath("UIMain/UIMargin/LivesLabel")
+game_over_ui = NodePath("UIGameOver")
+game_over_score = NodePath("UIGameOver/GameOverCenter/VBox/Vbox/GameOverScore")
+game_over_hi_score = NodePath("UIGameOver/GameOverCenter/VBox/Vbox/GameOverHiScore")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="UIMain" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
 
-[node name="ScoreLabel" type="Label" parent="UI/MarginContainer"]
+[node name="UIMargin" type="MarginContainer" parent="UI/UIMain"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScoreLabel" type="Label" parent="UI/UIMain/UIMargin"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_sxj3q")
 theme_override_font_sizes/font_size = 30
-text = "####"
+text = "########"
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/MarginContainer"]
+[node name="LevelUICenter" type="CenterContainer" parent="UI/UIMain/UIMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="LevelLabel" type="Label" parent="UI/UIMain/UIMargin/LevelUICenter"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_kwtnl")
+theme_override_font_sizes/font_size = 30
+text = "lvl ##"
+
+[node name="LivesLabel" type="Label" parent="UI/UIMain/UIMargin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_xiebb")
+theme_override_font_sizes/font_size = 30
+text = "# lives"
+
+[node name="HeaderLine" type="Sprite2D" parent="UI/UIMain"]
+position = Vector2(300, 50)
+scale = Vector2(75, 0.5)
+texture = SubResource("GradientTexture2D_p78s6")
+
+[node name="UIGameOver" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverCenter" type="CenterContainer" parent="UI/UIGameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/UIGameOver/GameOverCenter"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="GameOverTxt" type="Label" parent="UI/UIGameOver/GameOverCenter/VBox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_13lbm")
+theme_override_font_sizes/font_size = 108
+text = "game over"
+
+[node name="Vbox" type="VBoxContainer" parent="UI/UIGameOver/GameOverCenter/VBox"]
 layout_mode = 2
 
-[node name="GameOverLabel" type="Label" parent="UI/MarginContainer/CenterContainer"]
+[node name="GameOverHiScore" type="Label" parent="UI/UIGameOver/GameOverCenter/VBox/Vbox"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_qm2d0")
 theme_override_font_sizes/font_size = 30
-text = "Game Over
-press r to restart"
+text = "high score: 00000000"
+horizontal_alignment = 1
+
+[node name="GameOverScore" type="Label" parent="UI/UIGameOver/GameOverCenter/VBox/Vbox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_4pary")
+theme_override_font_sizes/font_size = 30
+text = "score: 00000000"
+horizontal_alignment = 1
+
+[node name="GameOverReset" type="Label" parent="UI/UIGameOver/GameOverCenter/VBox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_n82ic")
+theme_override_font_sizes/font_size = 26
+text = "press 'r' to try again"
+horizontal_alignment = 1

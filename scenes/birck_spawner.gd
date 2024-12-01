@@ -6,6 +6,8 @@ var top_brick_margin: float = 50
 var bottom_brick_margin: float = 500
 var side_brick_margin: float = 0
 
+var spawned_bricks: Array[Node] = []
+
 var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 var brick_size: Vector2 = Vector2(64, 64)
 @onready var window_size: Vector2 = get_viewport().size
@@ -24,3 +26,9 @@ func spawn_bricks() -> void:
 			new_brick.position.x = (col * space_per_column) + side_brick_margin + space_per_column / 2
 			new_brick.position.y = (row * space_per_row) + top_brick_margin + space_per_row / 2
 			add_child(new_brick)
+
+func clear_bricks() -> void:
+	spawned_bricks = get_tree().get_nodes_in_group("brick")
+	for i in range(0, spawned_bricks.size()):
+		spawned_bricks[i].queue_free()
+	spawned_bricks.clear()

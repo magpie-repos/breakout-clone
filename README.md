@@ -4,17 +4,17 @@ Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 Status: Dev
-Time: 9h 05m
+Time: 11h 20m
 
 TODO: 
 
 - [x] Tasking
-- [ ] Level
+- [x] Level
   - [x] Background 
   - [x] Bricks
-	- [x] Brick Layout
-	- [x] completely randomized brick color bby
-	- [ ] ~~(OP) Multiple Levels~~
+    - [x] Brick Layout
+    - [x] completely randomized brick color bby
+    - [ ] ~~(OP) Multiple Levels~~
 - [x] Player Paddle
   - [x] Bounce vector depends on where it collides
   - [x] Handle Player Input
@@ -23,7 +23,7 @@ TODO:
   - [x] Die if off screen
   - [x] Kills bricks
   - [x] Smash mode
-- [ ] Game Manager
+- [x] Game Manager
   - [x] Handle loss
   - [x] Handle Win
   - [x] Multiple lieve (commonly known as lives)
@@ -39,10 +39,15 @@ TODO:
   - [ ] Loose
 - [ ] UI
   - [x] Score 
+    - [ ] Prettify score ui
+  - [x] Hi-Score
   - [ ] Pause
+  - [x] Displaying current lives
   - [x] Game Over
+    - [x] Display score & hi score
   - [ ] New Game
-  - [ ] Options
+    - [ ] New Game Instrutions
+  - [ ] (OP) - Options
 
 ## 
 
