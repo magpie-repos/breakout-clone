@@ -1,4 +1,5 @@
-#Break In Out
+#Breakout Clone
+A learning project where I remade Breakout in Godot with GDScript
 
 Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
