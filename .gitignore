@@ -4,3 +4,5 @@
 #My ignores
 score.save
 *.tmp
+/builds/
+export_presets.cfg
