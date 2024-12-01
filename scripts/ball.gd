@@ -8,7 +8,7 @@ var vector: Vector2
 var smash_used: bool = false
 var smash_active: bool = false
 var smash_speed_mult: float = 4
-var smash_speed_decay: float = 0.995
+var smash_speed_decay: float = 0.998
 ##Refs
 @onready var window_size: Vector2 = get_window().size
 @onready var sprite_size: Vector2 = $BallSprite.texture.get_size()
@@ -23,7 +23,10 @@ func _process(delta: float) -> void:
 	if is_out_of_bounds(sprite_size, window_size, scale):
 		ball_die.emit(self)
 		queue_free()
-
+	##Prevent bug where ball gets squished by paddle and has it's rotation permanently offset
+	rotation = 0
+	
+	
 func _physics_process(delta: float) -> void:
 	
 	##Handle player input	
@@ -75,4 +78,3 @@ func setup_ball(init_pos: Vector2, init_vector: Vector2, init_speed: float) -> v
 	position = init_pos
 	vector = init_vector
 	speed = init_speed
-	

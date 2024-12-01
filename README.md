@@ -4,17 +4,17 @@ Created: 2024-11-24
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 Status: Dev
-Time: 6h 7m
+Time: 9h 05m
 
 TODO: 
 
 - [x] Tasking
 - [ ] Level
   - [x] Background 
-  - [ ] Bricks
-    - [x] Brick Layout
-    - [ ] Brick Color depends on y height
-    - [ ] ~~(OP) Multiple Levels~~
+  - [x] Bricks
+	- [x] Brick Layout
+	- [x] completely randomized brick color bby
+	- [ ] ~~(OP) Multiple Levels~~
 - [x] Player Paddle
   - [x] Bounce vector depends on where it collides
   - [x] Handle Player Input
@@ -25,8 +25,8 @@ TODO:
   - [x] Smash mode
 - [ ] Game Manager
   - [x] Handle loss
-  - [ ] Handle Win
-  - [x] Multiple lieve
+  - [x] Handle Win
+  - [x] Multiple lieve (commonly known as lives)
   - [x] Handle score
   - [x] Save high score (between sesssions)
 - [ ] Animations
@@ -58,7 +58,7 @@ TODO:
   
   - can only activate once per bounce on paddle
 
-- BONUS: Paddle durability as special effect during certain levels?
+- ~~BONUS: Paddle durability as special effect during certain levels?~~
 
 ## Limitations - Time, Tools, and Target
 
@@ -68,7 +68,7 @@ TODO:
 
 **Team:** Me
 
-**Targer Resolution:** Resizable
+**Targer Resolution:** ~~Resizable~~ - Doesn't make sense for web embed
 
 **Target Platform:** Web (itch.io embed), Windows (my machine)
 
