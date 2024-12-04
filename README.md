@@ -1,13 +1,12 @@
-#Break In Out
-
-Created: 2024-11-24
+# Literally Just Breakout
+A learning project to help familiarize myself with Godot and GDScript, as well as common patterns
+in game design and production.
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
-Status: Dev
-Time: 13h 15m
-
-TODO: 
-
+**Created:** 2024-11-24
+**Status:** Finished
+**Time:** 13h 30m
+## TODO: 
 - [x] Tasking
 - [x] Level
   - [x] Background 
@@ -33,7 +32,7 @@ TODO:
   - [x] ball die animation
 - [x] Sounds
   - [x] Bounce
-  - [] ~~Brick Break~~
+  - [ ] ~~Brick Break~~
   - [x] Level Clear
   - [x] Loose
 - [x] UI
@@ -45,33 +44,16 @@ TODO:
   - [x] Game Over
 	- [x] Display score & hi score
   - [x] New Game Instrutions
-
-## 
-
 ## HOW TO MAKE GOOD
-
 - Option to active wrecking ball mode:
-  
   - Ball smashes through bricks w/o bouncing
-  
   - Ball goes super fast
-  
   - Activating mode incurs movement restrictin on paddle
-  
   - can only activate once per bounce on paddle
-
-- ~~BONUS: Paddle durability as special effect during certain levels?~~
-
 ## Limitations - Time, Tools, and Target
-
 **Purpose:** Learn a about on-the-fly texture recoloring and gradient textures; 
-
 **Time Limit:** 20h
-
 **Team:** Me
-
 **Targer Resolution:** ~~Resizable~~ - Doesn't make sense for web embed
-
 **Target Platform:** Web (itch.io embed), Windows (my machine)
-
 **Target Inputs:** Keyboard

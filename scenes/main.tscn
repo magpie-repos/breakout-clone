@@ -270,7 +270,7 @@ you lose a life if the ball falls off the screen."
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_admbs")
 theme_override_font_sizes/font_size = 18
-text = "- Hit 'space' ot activate smash mode."
+text = "- Hit 'space' to activate smash mode."
 
 [node name="ContinueLabel" type="Label" parent="UI/UITutorial/TutorialCetner/Vbox"]
 layout_mode = 2
