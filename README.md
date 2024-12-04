@@ -4,7 +4,9 @@ in game design and production.
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
 **Created:** 2024-11-24
+
 **Status:** Finished
+
 **Time:** 13h 30m
 ## TODO: 
 =======
@@ -63,8 +65,13 @@ TODO:
   - can only activate once per bounce on paddle
 ## Limitations - Time, Tools, and Target
 **Purpose:** Learn a about on-the-fly texture recoloring and gradient textures; 
+
 **Time Limit:** 20h
+
 **Team:** Me
+
 **Targer Resolution:** ~~Resizable~~ - Doesn't make sense for web embed
+
 **Target Platform:** Web (itch.io embed), Windows (my machine)
+
 **Target Inputs:** Keyboard
