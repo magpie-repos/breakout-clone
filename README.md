@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Literally Just Breakout
 A learning project to help familiarize myself with Godot and GDScript, as well as common patterns
 in game design and production.
@@ -19,8 +18,6 @@ Status: Done
 Time: 13h 15m
 
 TODO: 
-
->>>>>>> dce0ed8a90f72516c42db1e9fc2c68889af40b18
 - [x] Tasking
 - [x] Level
   - [x] Background 
