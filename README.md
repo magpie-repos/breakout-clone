@@ -3,8 +3,8 @@ A learning project to help familiarize myself with Godot and GDScript, as well a
 in game design and production.
 Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
 
-**Created:** 2024-11-24
-**Status:** Finished
+**Created:** 2024-11-24\n
+**Status:** Finished\n
 **Time:** 13h 30m
 ## TODO: 
 =======
