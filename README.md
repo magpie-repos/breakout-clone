@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Literally Just Breakout
 A learning project to help familiarize myself with Godot and GDScript, as well as common patterns
 in game design and production.
@@ -7,6 +8,19 @@ Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.i
 **Status:** Finished
 **Time:** 13h 30m
 ## TODO: 
+=======
+#Breakout Clone
+A learning project where I remade Breakout in Godot with GDScript
+
+Created: 2024-11-24
+Part of: [Breakout | The 20 Games Challenge](https://20_games_challenge.gitlab.io/games/breakout/)
+
+Status: Done
+Time: 13h 15m
+
+TODO: 
+
+>>>>>>> dce0ed8a90f72516c42db1e9fc2c68889af40b18
 - [x] Tasking
 - [x] Level
   - [x] Background 
